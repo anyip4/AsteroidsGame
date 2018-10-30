@@ -1,10 +1,11 @@
-//your variable declarations here
+Spaceship pog;
 public void setup() 
 {
-  //your code here
+	size(700,700);
+  	pog = new Spaceship();
 }
 public void draw() 
 {
-  //your code here
+  	pog.show();
 }
 
