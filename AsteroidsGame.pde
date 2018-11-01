@@ -1,12 +1,21 @@
 Spaceship pog;
+Star [] space = new Star[200];
+
 public void setup() 
 {
 	size(700,700);
   	pog = new Spaceship();
+  	for(int i = 0; i < space.length; i++){
+  		space[i] = new Star();
+  	}
 }
 public void draw() 
 {
-	background(212);
+	background(0);
+	for(int i = 0; i < space.length; i++){
+		space[i].show();
+	}
+	noStroke();
   	pog.show();
   	pog.move();
 }
@@ -24,6 +33,9 @@ public void keyPressed(){
 	}
 	if(key == 'd'){
 		pog.setPointDirection((int)pog.getPointDirection() + 20);
+	}
+	if(key == 'q'){
+		pog.setPointDirection((int)pog.getPointDirection() + 180);
 	}
 	if(key == 'w'){
 		pog.accelerate(4);
