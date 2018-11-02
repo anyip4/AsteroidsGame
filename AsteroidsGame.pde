@@ -29,13 +29,13 @@ public void keyPressed(){
 		pog.setDirectionY(0);
 	}
 	if(key == 'a'){
-		pog.setPointDirection((int)pog.getPointDirection() - 20);
+		pog.turn(-10);
 	}
 	if(key == 'd'){
-		pog.setPointDirection((int)pog.getPointDirection() + 20);
+		pog.turn(10);
 	}
 	if(key == 'q'){
-		pog.setPointDirection((int)pog.getPointDirection() + 180);
+		pog.turn(180);
 	}
 	if(key == 'w'){
 		pog.accelerate(4);
