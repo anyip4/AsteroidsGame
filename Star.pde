@@ -11,7 +11,7 @@ class Star
 		noStroke();
 	}
 	public void show(){	
-		fill((int)myColor1,(int)myColor2,(int)myColor3);
-		ellipse(myX, myY, 5, 5);
+		fill(255);
+		ellipse(myX, myY, 2, 2);
 	}
 }
