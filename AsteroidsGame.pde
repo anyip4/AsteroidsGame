@@ -41,7 +41,7 @@ public void keyPressed(){
 		pog.accelerate(4);
 	}
 	if(key == 's'){
-		pog.deccelerate(2);
+		pog.accelerate(-2);
 	}
 
 }

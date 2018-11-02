@@ -45,11 +45,4 @@ class Spaceship extends Floater
   public double getPointDirection(){
   	return myPointDirection;
   }
-	public void deccelerate (double dAmount){  
-     double dRadians = myPointDirection*(Math.PI/180);
-       //change coordinates of direction of travel
-     myDirectionX -= ((dAmount) * Math.cos(dRadians));
-     myDirectionY -= ((dAmount) * Math.sin(dRadians));    
-	}
-
 }
