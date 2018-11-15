@@ -10,14 +10,16 @@ public void setup()
   	pog = new Spaceship();
   	for(int i = 0; i < space.length; i++){
   		space[i] = new Star();
-  	// }
+  	}
   	// for(int i = 0; i < rocks.length; i++){
   	// 	rocks[i] = new Asteroid();
   	// }
   	rocks = new Asteroid();
-// }
+}
 public void draw() 
 {
+	System.out.println("hi");
+
 	background(0);
 	for(int i = 0; i < space.length; i++){
 		space[i].show();
