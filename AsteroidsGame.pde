@@ -1,20 +1,21 @@
 Spaceship pog;
-// Asteroid rocks;
 Star [] space = new Star[200];
-Asteroid [] rocks = new Asteroid[9];
+// Asteroid [] rocks = new Asteroid[9];
+ArrayList <Asteroid> rocks;
+int numberofAsteroid = 20;
 
 public void setup() 
 {
 	size(700,700);
+	rocks = new ArrayList <Asteroid>();
 	
   	pog = new Spaceship();
   	for(int i = 0; i < space.length; i++){
   		space[i] = new Star();
   	}
-  	for(int i = 0; i < rocks.length; i++){
-  		rocks[i] = new Asteroid();
+  	for(int i = 0; i < numberofAsteroid; i++){
+  		rocks.add(new Asteroid());
   	}
-  	// rocks = new Asteroid();
 }
 public void draw() 
 {
@@ -23,12 +24,10 @@ public void draw()
 		space[i].show();
 	}
 
-	for(int i = 0; i < rocks.length; i++){
-  		rocks[i].show();
-  		rocks[i].move();
+	for(int i = 0; i < rocks.size(); i++){
+		rocks.get(i).show();
+		rocks.get(i).move();
   	}
-  	// rocks.show();
-  	// rocks.move();
 	noStroke();
   	pog.show();
   	pog.move();
