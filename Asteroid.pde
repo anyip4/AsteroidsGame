@@ -7,12 +7,12 @@ class Asteroid extends Floater{
 	  	int [] numYcords = {-8, -5, 2, 10, 8, 0};
 	  	xCorners = numXcords;
 	  	yCorners = numYcords;
-	  	myCenterX = 350;
-	  	myCenterY = 350;
-	  	myDirectionX = (int)(Math.random()*10)-5;
-	  	myDirectionY = (int)(Math.random()*10)-5;
+	  	myCenterX = (int)(Math.random()*700);
+	  	myCenterY = (int)(Math.random()*700);
+	  	myDirectionX = (int)(Math.random()*8)-4;
+	  	myDirectionY = (int)(Math.random()*8)-4;
 	  	myPointDirection = (int)(Math.random()*360); 
-	  	myColor = 255;
+	  	myColor = 200;
 	  	randomRotation = (int)(Math.random()*20)-10;
 
 

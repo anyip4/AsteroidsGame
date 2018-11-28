@@ -1,36 +1,34 @@
 Spaceship pog;
-Asteroid rocks;
+// Asteroid rocks;
 Star [] space = new Star[200];
-
+Asteroid [] rocks = new Asteroid[9];
 
 public void setup() 
 {
 	size(700,700);
-	// Asteroid [] rocks = new Asteroid[9];
+	
   	pog = new Spaceship();
   	for(int i = 0; i < space.length; i++){
   		space[i] = new Star();
   	}
-  	// for(int i = 0; i < rocks.length; i++){
-  	// 	rocks[i] = new Asteroid();
-  	// }
-  	rocks = new Asteroid();
+  	for(int i = 0; i < rocks.length; i++){
+  		rocks[i] = new Asteroid();
+  	}
+  	// rocks = new Asteroid();
 }
 public void draw() 
 {
-	System.out.println("hi");
-
 	background(0);
 	for(int i = 0; i < space.length; i++){
 		space[i].show();
 	}
 
-	// for(int i = 0; i < rocks.length; i++){
- //  		rocks[i].show();
- //  		rocks[i].move();
- //  	}
-  	rocks.show();
-  	rocks.move();
+	for(int i = 0; i < rocks.length; i++){
+  		rocks[i].show();
+  		rocks[i].move();
+  	}
+  	// rocks.show();
+  	// rocks.move();
 	noStroke();
   	pog.show();
   	pog.move();
