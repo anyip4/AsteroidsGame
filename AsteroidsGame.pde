@@ -1,6 +1,5 @@
 Spaceship pog;
 Star [] space = new Star[200];
-// Asteroid [] rocks = new Asteroid[9];
 ArrayList <Asteroid> rocks;
 int numberofAsteroid = 20;
 
@@ -20,17 +19,26 @@ public void setup()
 public void draw() 
 {
 	background(0);
+	//to show the stars
 	for(int i = 0; i < space.length; i++){
 		space[i].show();
 	}
 
+	//to move the asteroids
 	for(int i = 0; i < rocks.size(); i++){
 		rocks.get(i).show();
 		rocks.get(i).move();
+
+		 if(dist(pog.getX(), pog.getY(), rocks.get(i).getX(), rocks.get(i).getY()) < 20){
+		 	rocks.remove(i);
+		 }
   	}
-	noStroke();
+	//to move the spaceship
   	pog.show();
   	pog.move();
+
+  	//to destroy the asteroids
+
 }
 
 public void keyPressed(){
