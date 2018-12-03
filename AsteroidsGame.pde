@@ -2,6 +2,10 @@ Spaceship pog;
 Star [] space = new Star[200];
 ArrayList <Asteroid> rocks;
 int numberofAsteroid = 20;
+boolean letterW = false;
+boolean letterA = false;
+boolean letterS = false;
+boolean letterD = false;
 
 public void setup() 
 {
@@ -24,7 +28,7 @@ public void draw()
 		space[i].show();
 	}
 
-	//to move the asteroids
+	//to move the asteroids and destroy them
 	for(int i = 0; i < rocks.size(); i++){
 		rocks.get(i).show();
 		rocks.get(i).move();
@@ -37,8 +41,18 @@ public void draw()
   	pog.show();
   	pog.move();
 
-  	//to destroy the asteroids
-
+	if(letterA == true){
+		pog.turn(-5);
+	}
+	if(letterD == true){
+		pog.turn(5);
+	}
+	if(letterW == true){
+		pog.accelerate(.5);
+	}
+	if(letterS == true){
+		pog.accelerate(-0.25);
+	}
 }
 
 public void keyPressed(){
@@ -49,20 +63,35 @@ public void keyPressed(){
 		pog.setDirectionX(0);
 		pog.setDirectionY(0);
 	}
-	if(key == 'a'){
-		pog.turn(-10);
-	}
-	if(key == 'd'){
-		pog.turn(10);
-	}
 	if(key == 'q'){
 		pog.turn(180);
 	}
+	
+	if(key == 'a'){
+		letterA = true;
+	}
+	if(key == 'd'){
+		letterD = true;
+	}
 	if(key == 'w'){
-		pog.accelerate(4);
+		letterW = true;
 	}
 	if(key == 's'){
-		pog.accelerate(-2);
+		letterS = true;
 	}
+}
 
+public void keyReleased(){
+	if(key == 'a'){
+		letterA = false;
+	}
+	if(key == 'd'){
+		letterD = false;
+	}
+	if(key == 'w'){
+		letterW = false;
+	}
+	if(key == 's'){
+		letterS = false;
+	}
 }
