@@ -2,17 +2,24 @@ Spaceship pog;
 Star [] space = new Star[200];
 ArrayList <Asteroid> rocks;
 int numberofAsteroid = 20;
+Bullet boom;
+
 boolean letterW = false;
 boolean letterA = false;
 boolean letterS = false;
 boolean letterD = false;
 
+boolean shoot = false;
+
 public void setup() 
 {
 	size(700,700);
 	rocks = new ArrayList <Asteroid>();
+
 	
   	pog = new Spaceship();
+  	boom = new Bullet(pog);
+  	
   	for(int i = 0; i < space.length; i++){
   		space[i] = new Star();
   	}
@@ -41,6 +48,9 @@ public void draw()
   	pog.show();
   	pog.move();
 
+  	boom.show();
+  	boom.move();
+
 	if(letterA == true){
 		pog.turn(-5);
 	}
@@ -48,10 +58,10 @@ public void draw()
 		pog.turn(5);
 	}
 	if(letterW == true){
-		pog.accelerate(.5);
+		pog.accelerate(.25);
 	}
 	if(letterS == true){
-		pog.accelerate(-0.25);
+		pog.accelerate(-0.125);
 	}
 }
 
@@ -79,6 +89,9 @@ public void keyPressed(){
 	if(key == 's'){
 		letterS = true;
 	}
+	if(key == ' '){
+		shoot = true;
+	}
 }
 
 public void keyReleased(){
@@ -93,5 +106,8 @@ public void keyReleased(){
 	}
 	if(key == 's'){
 		letterS = false;
+	}
+	if(key == ' '){
+		shoot = false;
 	}
 }
